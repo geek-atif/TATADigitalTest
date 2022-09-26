@@ -22,67 +22,6 @@
       _responseFromNativeCode = response;
      });
     }
-  
-   ````
-    Full Code
-    class MyApp extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-      return new MaterialApp(
-        home: new HomePage(),
-      );
-    }
-  }
-  class HomePage extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-      return new Scaffold(
-        appBar: new AppBar(
-          title: const Text('Native Code from Dart'),
-        ),
-        body: new MyHomePage(),
-      );
-      }
-     }
-      class MyHomePage extends StatefulWidget {
-        MyHomePage({Key key, this.title}) : super(key: key);
-        final String title;
-        @override
-        _MyHomePageState createState() => new _MyHomePageState();
-      }
-      class _MyHomePageState extends State<MyHomePage> {
-        static const platform = const MethodChannel('flutter.native/helper');
-        String _responseFromNativeCode = 'Waiting for Response...';
-        Future<void> responseFromNativeCode() async {
-          String response = "";
-          try {
-            final String result = await platform.invokeMethod('helloFromNativeCode');
-            response = result;
-          } on PlatformException catch (e) {
-            response = "Failed to Invoke: '${e.message}'.";
-          }
-          setState(() {
-            _responseFromNativeCode = response;
-          });
-        }
-        @override
-        Widget build(BuildContext context) {
-          return Material(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  RaisedButton(
-                    child: Text('Call Native Method'),
-                    onPressed: responseFromNativeCode,
-                  ),
-                  Text(_responseFromNativeCode),
-                ],
-              ),
-            ),
-          );
-        }
-    } 
-   ```
-    
+  ##### 4. What is BuildContext? What is its importance?
+    The BuildContext is the handle/pointer to the location of the particular widget in the widget tree. Note that every widget you create has its own BuildContext, and as a matter of fact, every widget should have its own BuildContext for them to locate themselves in the widget tree or reach out to the nearest ancestor widget.
    
