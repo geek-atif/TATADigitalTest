@@ -36,3 +36,16 @@
     ```
 Output    
 ![](images/3.jpg)
+
+##### 2.  Identify the problem in the following code block and correct it.
+  ```
+    String longOperationMethod(){
+      var counting =0;
+      for(var i =1 ; i < 1000000000; i++){
+        counting = i;
+      }
+
+      return '$counting time I print the value';
+    }
+  ```  
+  
