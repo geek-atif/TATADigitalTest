@@ -8,6 +8,23 @@
     By Right-Clicking on the Particular widget -> Refactor -> Extract Flutter Widget (we can also use shortcut Ctrl+Alt+W)
 ![](images/one.jpg)
     Give it a name and then click on refactor.
-![](images/two.jpg) 
+![](images/two.jpg)
+  ##### 3. How can I access platform(iOS or Android) specific code from Flutter?
+     Future<void> responseFromNativeCode() async {
+     String response = "";
+     try {
+      final String result = await platform.invokeMethod('helloFromNativeCode');
+      response = result;
+     } on PlatformException catch (e) {
+      response = "Failed to Invoke: '${e.message}'.";
+     }
+     setState(() {
+      _responseFromNativeCode = response;
+     });
+    }
+    
+    Full Code
+    
+  
      
   
