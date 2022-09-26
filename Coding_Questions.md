@@ -35,4 +35,4 @@
     }
     ```
 Output    
-![](images/three.jpg)
+![](images/3.jpg)
