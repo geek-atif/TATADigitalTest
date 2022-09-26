@@ -49,3 +49,11 @@ Output
     }
   ```  
   
+##### 3.   In the below code, list1 declared with var, list2 with final and list3 with const. What is the difference between these lists? Will the last two lines compile?
+
+  ```
+  var list1 = ['I', "test", 'flutter'];
+  final list2 = list1;
+  list2[2] ='Dart';
+  const list3 = list1; // This line will give error . Not compile 
+  ```  
