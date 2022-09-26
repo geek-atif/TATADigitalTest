@@ -24,4 +24,7 @@
     }
   ##### 4. What is BuildContext? What is its importance?
     The BuildContext is the handle/pointer to the location of the particular widget in the widget tree. Note that every widget you create has its own BuildContext, and as a matter of fact, every widget should have its own BuildContext for them to locate themselves in the widget tree or reach out to the nearest ancestor widget.
+    The BuildContext is the set of inputs that Flutter uses to create an instance of a widget. It includes properties on the Android and iOS platforms, as well as properties related to the current device and environment.
+    Why Is BuildContext Important?
+    There are many reasons why BuildContext is important. From locating widgets in the tree to interacting with RenderObjects, the context makes all of these interactions possible. It serves as the “bridge” between the widgets and rendering layer and is especially powerful for combining functionality or using information from one tree in another.
    
